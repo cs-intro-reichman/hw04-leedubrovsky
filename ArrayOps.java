@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int [] array = {1, 2, 1, 1, 2};
-        int [] arr = {2, 1};
+        int [] array = {1,2,3,-4,5};
+        int [] arr = {1,3,-4,5};
         System.out.println(containsTheSameElements(array, arr));
     }
     
@@ -60,7 +60,7 @@ public class ArrayOps {
 
             for (int j = 0; j < bigger; j++){
 
-                if (array1[i]== array2[j]){
+                if (i < array1.length && j < array2.length && array1[i] == array2[j]){
                     found = true;
                     break;
                 }
