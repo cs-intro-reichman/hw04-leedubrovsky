@@ -47,6 +47,7 @@ public class ArrayOps {
         int bigger = 0;
         int smaller = 0;
         boolean theSame = true;
+
         if (array1.length >= array2.length){
             bigger = array1.length;
             smaller = array2.length;
@@ -56,6 +57,7 @@ public class ArrayOps {
         }
         for (int i = 0; i < smaller; i ++){
             boolean found = false;
+            
             for (int j = 0; j < bigger; j++){
 
                 if (array1[i]== array2[j]){
