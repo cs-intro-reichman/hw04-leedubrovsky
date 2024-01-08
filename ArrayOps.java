@@ -35,10 +35,11 @@ public class ArrayOps {
             }
             
             }
+            return secondMax;
+
          }
 
-        return secondMax;
-    }
+
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         // Write your code here:
