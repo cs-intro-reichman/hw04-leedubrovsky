@@ -8,6 +8,7 @@ public class ArrayOps {
         // Write your code here:
         boolean stopRun = false; 
         for (int j = 0; j <= array.length; j++){
+            stopRun = false;
             for (int i = 0; i < array.length; i++){
                  if (array[i] == j){
                     stopRun = true;
@@ -23,20 +24,18 @@ public class ArrayOps {
 
     public static int secondMaxValue(int [] array) {
         // Write your code here:
-        int secondMax = 0;
+        int secondMax = array[0];
         int max = array[0];
         for (int i = 0; i < array.length; i++){
             if (array[i] > max){
                 secondMax = max;
                 max = array[i];
-          /*   }else if (array[i] > secondMax && array[i] < max){
+            }else if (array[i] > secondMax && array[i] < max){
                 secondMax = array[i];
-            }*/
+            }
             
-
-                  
-        }
-    }
+            }
+         }
 
         return secondMax;
     }
