@@ -1,6 +1,6 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int [] array = {6,-5,99,4};
+        int [] array = {2,8,3,7,8};
         System.out.println(secondMaxValue(array));
     }
     
@@ -27,12 +27,12 @@ public class ArrayOps {
         int secondMax = array[0];
         int max = array[0];
         for (int i = 0; i < array.length; i++){
-            if (array[i] > max){
+            if (array[i] >= max){
                 secondMax = max;
                 max = array[i];
-            }else if (array[i] > secondMax && array[i] < max){
-                secondMax = array[i];
-            }
+           // }else if (array[i] > secondMax && array[i] < max){
+           //     secondMax = array[i];
+           }
             
             }
             return secondMax;
