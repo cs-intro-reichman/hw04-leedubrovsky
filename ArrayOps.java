@@ -1,16 +1,44 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        
+        int [] array = {6,-5,99,4};
+        System.out.println(secondMaxValue(array));
     }
     
     public static int findMissingInt (int [] array) {
         // Write your code here:
+        boolean stopRun = false; 
+        for (int j = 0; j <= array.length; j++){
+            for (int i = 0; i < array.length; i++){
+                 if (array[i] == j){
+                    stopRun = true;
+                }
+                if ((stopRun == false) && (i == array.length-1)){
+                    return j;
+                }
+
+            }
+        }
         return -1;
     }
 
     public static int secondMaxValue(int [] array) {
         // Write your code here:
-        return 0;
+        int secondMax = 0;
+        int max = array[0];
+        for (int i = 0; i < array.length; i++){
+            if (array[i] > max){
+                secondMax = max;
+                max = array[i];
+          /*   }else if (array[i] > secondMax && array[i] < max){
+                secondMax = array[i];
+            }*/
+            
+
+                  
+        }
+    }
+
+        return secondMax;
     }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
