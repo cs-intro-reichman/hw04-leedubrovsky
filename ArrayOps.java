@@ -1,7 +1,8 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int [] array = {2,8,3,7,8};
-        System.out.println(secondMaxValue(array));
+        int [] array = {1, 2, 1, 1, 2};
+        int [] arr = {2, 1};
+        System.out.println(containsTheSameElements(array, arr));
     }
     
     public static int findMissingInt (int [] array) {
@@ -43,7 +44,33 @@ public class ArrayOps {
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         // Write your code here:
-        return false;
+        int bigger = 0;
+        int smaller = 0;
+        boolean theSame = true;
+        if (array1.length >= array2.length){
+            bigger = array1.length;
+            smaller = array2.length;
+        }else{
+            bigger = array2.length;
+            smaller = array1.length;
+        }
+        for (int i = 0; i < smaller; i ++){
+            boolean found = false;
+            for (int j = 0; j < bigger; j++){
+
+                if (array1[i]== array2[j]){
+                    found = true;
+                    break;
+                }
+                
+            }
+            if (!found){
+                    theSame = false;
+                    break;
+                }
+
+        }
+        return theSame;
     }
 
     public static boolean isSorted(int [] array) {
