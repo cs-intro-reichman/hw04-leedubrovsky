@@ -52,37 +52,37 @@ public class StringOps {
     public static String camelCase (String string) {
         // Write your code here:
         String sentence = "";
-        boolean firstWord = false;
+        boolean firstWord = true;  // Set to true to convert the first word to lowercase
 
-        for (int i = 0; i < string.length(); i++){
+        for (int i = 0; i < string.length(); i++) {
             char currentChar = string.charAt(i);
 
-            if ((currentChar != ' ')){ 
-                
-                if (firstWord){
-                    sentence += (char) (currentChar >= 'A' && currentChar <= 'Z' ? currentChar + 32 : currentChar);
+            if (currentChar != ' ') {
+                if (firstWord) {
+                    sentence += (char) (currentChar >= 'A' && currentChar <= 'Z' ? currentChar + ('a' - 'A') : currentChar);
                     firstWord = false;
-
-                }else {
-                    sentence += (char) (currentChar);
+                } else {
+                    sentence += (char) (currentChar >= 'a' && currentChar <= 'z' ? currentChar - ('a' - 'A') : currentChar);
                 }
 
+                // Find the end of the current word
                 int remainingChar = i + 1;
                 while (remainingChar < string.length() && string.charAt(remainingChar) != ' ') {
                     remainingChar++;
                 }
 
-                for ( int j = i + 1; j < remainingChar; j++){
-                sentence += (char) (string.charAt(j) >= 'A' && string.charAt(j) <= 'Z' ? string.charAt(j) + 32 : string.charAt(j));
+                // Convert the rest of the word to lowercase
+                for (int j = i + 1; j < remainingChar; j++) {
+                    sentence += (char) (string.charAt(j) >= 'A' && string.charAt(j) <= 'Z' ? string.charAt(j) + ('a' - 'A') : string.charAt(j));
                 }
+
                 i = remainingChar - 1;
-        
-
-
+            }
         }
-    }
+
         return sentence;
-}
+    }
+
 
     
     
@@ -100,7 +100,7 @@ public class StringOps {
         
         for (int j = 0; j < string.length(); j++){
              if (chr == (char)string.charAt(j)){
-                array[index] = chr;
+                array[index] = j;
                 index++;
             }
 
