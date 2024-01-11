@@ -22,7 +22,6 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-     
         
     }
 
@@ -49,7 +48,7 @@ public class StringOps {
         return sentence;
     }
 
-    public static String camelCase (String string) {
+    public static String camelcase (String string) {
         // Write your code here:
         String sentence = "";
         boolean firstWord = true;  // Set to true to convert the first word to lowercase
