@@ -31,16 +31,17 @@ public class StringOps {
         String sentence = ""; //+ (char) + (str.charAt(0) + 32);
         int i = 0;
 
-        while (i < string.length()){
-            if (string.charAt(i) >= '0' && string.charAt(i) <= '9' ){ // maybe i can switch it too - instead of 48 i will write '0'
-                sentence += string.charAt(i);
-            }else if ((string.charAt(i) == 'a' || string.charAt(i) == 'e' || string.charAt(i) == 'i' || string.charAt(i) == 'o'  || string.charAt(i) == 'u') ){
-                sentence += (char) (string.charAt(i) - 32 );
-            }else if (string.charAt(i) >= 'A' && string.charAt(i) <= 'Z' && (string.charAt(i) != 'A' || string.charAt(i) != 'E' || string.charAt(i) != 'I' || string.charAt(i) != 'O' || string.charAt(i) != 'U')){
-             sentence += (char) (string.charAt(i) +32 );
+        while (i < string.length()) {
+            char currentChar = string.charAt(i);
 
-            }else{
-                sentence += (char) (string.charAt(i));
+            if (currentChar >= '0' && currentChar <= '9') {
+                sentence += currentChar;
+            } else if (currentChar == 'a' || currentChar == 'e' || currentChar == 'i' || currentChar == 'o' || currentChar == 'u') {
+                sentence += (char) (currentChar - 32);
+            } else if (currentChar >= 'A' && currentChar <= 'Z' && currentChar != 'A' && currentChar != 'E' && currentChar != 'I' && currentChar != 'O' && currentChar != 'U') {
+                sentence += (char) (currentChar + 32);
+            } else {
+                sentence += currentChar;
             }
             i++;
         }
@@ -99,7 +100,7 @@ public class StringOps {
         
         for (int j = 0; j < string.length(); j++){
              if (chr == (char)string.charAt(j)){
-                array[index] = string.charAt(j);
+                array[index] = chr;
                 index++;
             }
 
