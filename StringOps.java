@@ -22,33 +22,34 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
+    System.out.println(capVowelsLowRest("vowels are fun"));
         
     }
 
     public static String capVowelsLowRest (String string) {
         // Write your code here: 
-        String sentence = ""; //+ (char) + (str.charAt(0) + 32);
+        String sentence = ""; 
         int i = 0;
 
         while (i < string.length()) {
-            char currentChar = string.charAt(i);
+        char currentChar = string.charAt(i);
 
-            if (currentChar >= '0' && currentChar <= '9') {
-                sentence += currentChar;
-            } else if (currentChar == 'a' || currentChar == 'e' || currentChar == 'i' || currentChar == 'o' || currentChar == 'u') {
-                sentence += (char) (currentChar - 32);
-            } else if (currentChar >= 'A' && currentChar <= 'Z' && currentChar != 'A' && currentChar != 'E' && currentChar != 'I' && currentChar != 'O' && currentChar != 'U') {
-                sentence += (char) (currentChar + 32);
-            } else {
-                sentence += currentChar;
-            }
-            i++;
+        if (currentChar >= '0' && currentChar <= '9') {
+            sentence += currentChar;
+        } else if (currentChar == 'a' || currentChar == 'e' || currentChar == 'i' || currentChar == 'o' || currentChar == 'u') {
+            sentence += (char) (currentChar - 32);
+        } else if ((currentChar >= 'B' && currentChar <= 'D') || (currentChar >= 'F' && currentChar <= 'H' ) || (currentChar >= 'J' && currentChar <= 'N' ) || (currentChar >= 'P' && currentChar <= 'T' ) || (currentChar >= 'V' && currentChar <= 'Z' )) {
+            sentence += (char) (currentChar + 32);
+        } else {
+            sentence += currentChar;
         }
-
-        return sentence;
+        i++;
     }
 
-    public static String camelcase (String string) {
+    return sentence;
+}
+
+    public static String camelCase (String string) {
         // Write your code here:
         String sentence = "";
         boolean firstWord = true;  // Set to true to convert the first word to lowercase
